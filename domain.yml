@@ -1,0 +1,98 @@
+version: '3.1'
+intents:
+- affirm
+- bored
+- bot_challenge
+- child_dislikes_intent
+- child_likes_intent
+- custom
+- deny
+- doubts
+- end_of_activity
+- express_love
+- goodbye
+- greet
+- mood_angry
+- mood_anxious
+- mood_fear
+- mood_happy
+- mood_sad
+- mood_uninterested
+- nlu_fallback
+- request_game
+- request_story
+- system_msg
+- thank_you
+actions:
+- action_fallback_response
+- action_update_conversation
+- action_activity_running
+- action_interaction_during_activity
+- action_narrate_story
+- action_update_likes
+- action_update_dislikes
+- action_my_action
+- action_deal_with_system_msg
+- action_generate_response
+responses:
+  utter_greet:
+  - text: Hi! How are you today?
+  utter_goodbye:
+  - text: Bye! Have a nice day!
+  utter_sorry:
+  - text: Sorry, I don't know what to do.
+  utter_youre_welcome:
+  - text: You're welcome!
+  utter_I_am_happy:
+  - text: I am happy too.
+  utter_present_game:
+  - text: Would you like to play a game?
+  utter_present_story:
+  - text: Would you like to hear a story?
+entities:
+- story_topic
+- activity_type
+- extra_info
+- like_topic
+- dislike_topic
+- game_name
+- displayed_emotion
+slots:
+  extra_info:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: extra_info
+  story_topic:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: story_topic
+  current_emotion:
+    type: text
+    mappings:
+    - type: custom
+  child_likes:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: like_topic
+  child_dislikes:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: dislike_topic
+  activity_running:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings:
+    - type: custom
+  displayed_emotion:
+    type: text
+    initial_value: happy
+    mappings:
+    - type: custom
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false

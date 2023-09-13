@@ -1,0 +1,170 @@
+version: "3.1"
+
+stories:
+
+- story: dealing with bored 1
+  steps:
+  - intent: bored
+  - slot_was_set:
+    - activity_running: false
+  - action: action_update_conversation
+
+  - action: utter_present_game
+  - action: action_update_conversation
+
+  - intent: affirm
+  - action: action_activity_running
+  - slot_was_set:
+    - activity_running: true
+
+
+- story: dealing with bored 2
+  steps:
+  - intent: bored
+  - slot_was_set:
+    - activity_running: false
+  - action: action_update_conversation
+
+  - action: utter_present_game
+  - action: action_update_conversation
+
+  - intent: deny
+  - action: action_update_conversation
+
+  - action: utter_present_story
+  - action: action_update_conversation
+
+  - intent: affirm
+  - action: action_update_conversation
+
+  - action: action_narrate_story
+
+- story: dealing with bored 3
+  steps:
+  - intent: bored
+  - slot_was_set:
+    - activity_running: false
+  - action: action_update_conversation
+
+  - action: utter_present_game
+  - action: action_update_conversation
+
+  - intent: deny
+  - action: action_update_conversation
+
+  - action: utter_present_story
+  - action: action_update_conversation
+
+  - intent: deny
+  - action: action_update_conversation
+
+  - action: utter_sorry
+  - action: action_update_conversation
+
+- story: play chess
+  steps:
+  - intent: request_game
+  - slot_was_set:
+    - activity_running: false 
+  - action: action_update_conversation
+  - action: action_activity_running
+  - slot_was_set:
+    - activity_running: true
+
+- story: to say a story
+  steps:
+  - intent: request_story
+  - slot_was_set:
+    - activity_running: false
+  - action: action_narrate_story
+
+- story: dealing with emotion 1
+  steps:
+  - or:
+    - intent: mood_angry
+    - intent: mood_anxious
+    - intent: mood_fear
+    - intent: mood_happy
+    - intent: mood_sad
+  - slot_was_set:
+    - activity_running: false
+  - action: action_fallback_response
+
+- story: dealing with lack of interest 2
+  steps:
+  - or:
+    - intent: affirm
+    - intent: deny
+    - intent: mood_uninterested
+    - intent: bot_challenge
+    - intent: doubts
+  - slot_was_set:
+    - activity_running: false
+  - action: action_fallback_response
+
+# - story: interactive_story_1
+#   steps:
+#   - action: utter_play_specific_game
+#   - action: action_listen
+
+- story: updating child likes
+  steps:
+  - intent: child_likes_intent
+    entities:
+    - like_topic
+  - slot_was_set:
+    - activity_running: false
+  - action: action_update_likes
+  - action: action_fallback_response
+
+- story: updating child dislikes
+  steps:
+  - intent: child_dislikes_intent
+    entities:
+    - dislike_topic
+  - slot_was_set:
+    - activity_running: false
+  - action: action_update_dislikes
+  - action: action_fallback_response
+
+- story: displaying child likes and dislikes
+  steps:
+  - intent: custom
+  - slot_was_set:
+    - activity_running: false
+  - action: action_my_action
+
+- story: interactive_story_1
+  steps:
+  - intent: request_game
+  - action: action_update_conversation
+  - action: action_activity_running
+  - slot_was_set:
+    - activity_running: true
+  - action: action_interaction_during_activity
+  - intent: nlu_fallback
+    entities:
+    - game_name: emotion
+  - intent: nlu_fallback
+  - action: action_fallback_response
+  - action: action_interaction_during_activity
+  - intent: nlu_fallback
+    entities:
+    - game_name: emotion
+  - intent: nlu_fallback
+  - action: action_fallback_response
+  - action: action_interaction_during_activity
+
+- story: interactive_story_2
+  steps:
+  - intent: nlu_fallback
+  - action: action_fallback_response
+  - action: action_interaction_during_activity
+  - action: action_listen
+
+- story: interactive_story_3
+  steps:
+  - intent: nlu_fallback
+  - action: action_fallback_response
+  - action: action_generate_response
+  - action: action_listen

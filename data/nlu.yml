@@ -1,0 +1,610 @@
+version: "3.1"
+nlu:
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Yes
+    - Yeah
+    - Yup
+    - Absolutely
+    - Sure
+    - Absolutely yes
+    - Definitely
+    - You bet
+    - That's right
+    - perfect
+    - yes please
+    - good
+    - good enough
+    - ok
+    - okay
+- intent: bot_challenge
+  examples: |
+    - are you a bot
+    - are you a human
+    - am I talking to a bot
+    - am I talking to a human
+    - are you a human or a bot
+    - are you a bot or a human
+    - are you a bot or a robot
+    - are you a robot or a bot
+    - are you a robot or a human
+    - are you a human or a robot
+    - what can you do
+    - what can you do for me
+    - what can you do for me robot
+    - what can you do for me today
+    - what all can you do
+    - what all can you do for me
+    - what all can you do for me robot
+    - what all can you do for me today
+    - what can you do for me today robot
+- intent: bored
+  examples: |
+    - I'm bored
+    - This is really dull
+    - Can we find something more interesting to do
+    - I'm feeling restless and bored
+    - This is not very engaging
+    - I wish we could do something fun
+    - I'm so bored I could scream
+    - This is boring
+    - Can we do something fun
+    - I'm feeling bored
+    - I'm so bored
+    - I'm bored, can we do something fun
+    - boring
+    - its boring
+- intent: child_likes_intent
+  examples: |
+    - I love playing with [dolls](like_topic)
+    - I really like [dinosaurs](like_topic)
+    - I enjoy playing [soccer](like_topic)
+    - I adore [drawing and coloring](like_topic)
+    - I have so much fun playing [video games](like_topic)
+    - I like eating [ice cream](like_topic)
+    - I love watching [cartoons](like_topic) on TV
+    - I enjoy reading [comic books](like_topic)
+    - I like listening to [music](like_topic)
+    - I love going to the [park](like_topic)
+    - I enjoy [swimming](like_topic)
+    - I have fun playing with [LEGO](like_topic) bricks
+    - I like learning about [space and planets](like_topic)
+    - I enjoy playing [basketball](like_topic)
+    - I love [baking cookies](like_topic) with my family
+    - I like going to the [zoo](like_topic) to see animals
+    - I enjoy [singing](like_topic) and dancing
+    - I love [roller coasters](like_topic) and amusement parks
+    - I like [gardening](like_topic) and planting flowers
+    - I enjoy [building sandcastles](like_topic) at the beach
+    - I love [playing](like_topic)
+    - [dogs](like_topic) are my favorite
+    - [cats](like_topic) and [dogs](like_topic) are my favorite
+    - I absolutely love [pets](like_topic)
+    - I like watching [cartoons](like_topic) on TV
+    - I adore [drawing](like_topic)
+    - I have so much fun playing [videogames](like_topic)
+    - I like eating [icecream](like_topic)
+    - I enjoy reading [comics](like_topic)
+    - I like learning about [space](like_topic)
+    - I love [baking](like_topic) with my family
+    - I love [rollercoasters](like_topic) and amusement parks
+    - I enjoy [building](like_topic) sandcastles at the beach
+    - [chocolate](like_topic) is my favorite
+    - [dogs](like_topic) are my fav
+    - I like [dogs](like_topic), [cats](like_topic), and [birds](like_topic)
+    - I love [fish](like_topic) and [chips](like_topic)
+    - I like [golden retrievers](like_topic)
+    - I love [gummy bears](like_topic)
+- intent: child_dislikes_intent
+  examples: |
+    - I don't like [spiders](dislike_topic)
+    - I'm not a fan of [movies](dislike_topic)
+    - I don't enjoy [math](dislike_topic) class
+    - I don't like [broccoli](dislike_topic)
+    - I dislike [loud noises](dislike_topic)
+    - I don't enjoy [cleaning my room](dislike_topic)
+    - I don't like [going to the dentist](dislike_topic)
+    - I'm not a fan of [waking up early](dislike_topic)
+    - I don't enjoy [doing homework](dislike_topic)
+    - I dislike [waiting in line](dislike_topic) for a long time
+    - I don't like [rainy days](dislike_topic) when I can't play outside
+    - I don't enjoy [long car rides](dislike_topic)
+    - I dislike [getting shots](dislike_topic) at the doctor's office
+    - I don't like [scary roller coasters](dislike_topic)
+    - I don't enjoy [public speaking](dislike_topic)
+    - I dislike [dark and scary places](dislike_topic)
+    - I don't like [getting my hair cut](dislike_topic)
+    - I don't enjoy [being alone](dislike_topic) for a long time
+    - I dislike [spicy food](dislike_topic)
+    - I don't like [going to bed early](dislike_topic)
+    - I dont think I like [eating vegetables](dislike_topic)
+    - I don't like [dinosaurs](dislike_topic)
+    - I'm not a fan of [scarymovies](dislike_topic)
+    - I dislike [loudnoises](dislike_topic)
+    - I don't enjoy [cleaning](dislike_topic) my room
+    - I don't like [dentist](dislike_topic) visits
+    - I'm not a fan of [wakingup](dislike_topic) early
+    - I don't enjoy [homework](dislike_topic)
+    - I dislike [waiting](dislike_topic) in line for a long time
+    - I don't like [rainydays](dislike_topic) when I can't play outside
+    - I don't enjoy [carrides](dislike_topic)
+    - I dislike [shots](dislike_topic) at the doctor's office
+    - I don't like [scaryrollercoasters](dislike_topic)
+    - I don't enjoy [publicspeaking](dislike_topic)
+    - I dislike [darkplaces](dislike_topic)
+    - I don't like [haircuts](dislike_topic)
+    - I don't enjoy [beingalone](dislike_topic) for a long time
+    - I dislike [spicyfood](dislike_topic)
+    - I don't like [bedtime](dislike_topic)
+    - I really don't like [exams](dislike_topic)
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - Nope
+    - No way
+    - Definitely not
+    - Not really
+    - No, I don't think so
+    - Sorry, no
+    - Not a chance
+    - Don't think so
+    - not even a little bit
+- intent: doubts
+  examples: |
+    - what is your favorite color
+    - what is your favorite food
+    - how do you feel
+    - how old are you
+    - what is your name
+    - why is the sky blue
+    - if I ask you a question will you answer
+    - will you marry me
+    - why are rainbows colorful
+    - what will you do if I ask you a question
+    - how do i know you are not a bot
+    - which is the capital of india
+    - when can I sleep
+    - what is the meaning of life
+    - what is happiness
+    - Can you give me a motivational quote?
+    - I'd like to hear a motivational quote
+    - I would love to hear a fun fact
+    - What should I do in this situation?
+    - Can you give me some advice?
+    - I need some guidance
+    - How would you handle this?
+    - what about dieting
+    - what do you know about sleep
+    - how to make juice
+    - how to bake a cake
+    - how can I get taller
+- intent: end_of_activity
+  examples: |
+    - that was fun
+    - that was great
+    - that was awesome
+    - that was amazing
+    - that was cool
+    - wow I had so much fun
+    - that was a great [game](activity_type)
+    - that was a great [story](activity_type)
+    - that was a fun [game](activity_type)
+    - that [story](activity_type) was interesting
+    - the [story](activity_type) was not interesting
+    - the [game](activity_type) was not fun
+    - you call that a [game](activity_type)
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi there
+    - Hey there
+    - Good afternoon
+    - Greetings
+    - What's up
+    - Howdy
+    - Hey buddy
+    - howdy, nice weather
+    - hey, how are you
+- intent: goodbye
+  examples: |
+    - c u
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Bye bye
+    - Farewell
+    - Catch you later
+    - Take care
+    - So long
+    - Adios
+    - Goodbye for now
+    - See you soon
+    - farewell
+    - have a good day
+    - have a great day
+    - take care
+    - see you in a bit
+- intent: express_love
+  examples: |
+    - I love you
+    - I love you so much
+    - I love your responses
+    - You make me smile
+    - You're amazing!
+    - I love how you understand me
+    - I love chatting with you
+    - You're so cool
+    - You make me happy
+    - You're my friend
+    - I love spending time with you
+    - I really love you
+    - You're the best robot ever
+    - I love talking to you
+    - You're my favorite chatbot
+    - I think you're awesome
+    - you are my best friend
+- intent: mood_angry
+  examples: |
+    - I am angry
+    - I am mad
+    - I am furious
+    - I am pissed
+    - I am so angry right now
+    - I am so mad right now
+    - this is so frustrating
+    - I am so frustrated
+    - god damn it
+    - I am so pissed off
+    - angry
+    - I am boiling
+    - I am boiling mad
+    - I am fuming
+    - I am feeling furious
+    - I am outraged
+    - gods above I am furious
+- intent: mood_anxious
+  examples: |
+    - I am anxious
+    - I am nervous
+    - what if I fail
+    - I am so nervous
+    - I am so anxious
+    - I'm starting to panic
+    - I'm starting to freak out
+    - I'm starting to get nervous
+    - I'm starting to get anxious
+    - I'm starting to get worried
+    - I am on edge
+    - I am freaking out
+    - this is stressing me out
+    - this is stressful
+    - I am so stressed
+    - I am worrying
+    - anxious
+    - nervous
+- intent: mood_fear
+  examples: |
+    - I'm scared
+    - I'm really afraid right now
+    - Can you help me I'm feeling really scared
+    - I don't want to do it, I'm too scared
+    - I'm feeling really nervous and scared
+    - I'm terrified
+    - I'm shaking because I'm so scared
+    - I don't like it, it's too scary for me
+    - I'm scared and I don't know what to do
+    - I'm feeling really anxious and scared
+    - I am petrified
+    - I am terrified
+    - I am scared
+    - afraid
+    - fearful
+- intent: mood_happy
+  examples: |
+    - I'm so happy
+    - This is the best day ever
+    - I can't stop smiling
+    - I'm feeling really good today
+    - I am ecstatic
+    - I'm over the moon
+    - That makes me really happy
+    - I'm feeling really joyful and happy
+    - This is amazing, I'm so happy
+    - I'm feeling really content and happy right now
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am good
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - I'm feeling great!
+    - I'm doing well, thanks for asking!
+    - I'm fantastic!
+    - I'm feeling fantastic today!
+    - I'm feeling really good today!
+    - I'm doing fantastic, thanks!
+    - I'm having a great day!
+    - I'm feeling fantastic!
+    - I'm feeling top notch today!
+    - I'm feeling super positive today!
+    - I am super happy
+    - I am super excited
+    - I am super stoked
+    - Happy
+    - Excited
+    - Stoked
+    - I'm feeling happy
+    - Happy as I can be
+    - bursting with energy
+    - bursting with joy
+    - I love playing with my toys!
+    - This is the best day ever!
+    - thank gods it's friday
+    - I'm really happy right now
+    - Life is beautiful
+    - I'm on cloud nine
+    - I feel like I'm walking on sunshine
+- intent: mood_sad
+  examples: |
+    - my day was horrible
+    - I am sad
+    - sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so sad
+    - I'm feeling sad
+    - I'm feeling unhappy
+    - I'm not feeling very good today
+    - I'm feeling a bit down today
+    - I'm feeling a bit low today
+    - Not so good
+    - Not great
+    - Not fantastic
+    - A bit sad
+    - A bit unhappy
+    - I don't like it when you leave
+    - I'm feeling down
+    - I'm really sad
+    - I feel down in the dumps
+    - My heart is heavy
+    - I'm feeling blue
+- intent: mood_uninterested
+  examples: |
+    - I don't feel like doing this
+    - I'm not really into this
+    - Can we do something else instead
+    - I am not interested in this activity
+    - This activity is not my cup of tea
+    - I'm not feeling motivated to continue this activity
+    - Can we do something different
+    - I'm not enjoying this activity
+    - This activity is not making me happy
+    - Can we find something else to do that's more enjoyable
+    - I don't think this is the right activity for me
+    - Can we try a different activity that I might enjoy more
+    - I don't feel like this is worth my time
+    - Can we do something that's more meaningful to me
+    - I am not passionate about this activity
+    - Can we do something that aligns better with my interests
+    - This activity is not challenging or interesting enough for me
+    - Can we do something that's more engaging and stimulating
+    - I'm not interested in this
+    - This is not very exciting
+    - I'm not having any fun
+    - This is not very interesting
+    - This is so boring, I don't want to do it anymore
+    - stop it
+    - stop this activity
+    - i would rather do something else
+    - I don't want to do this anymore
+    - nah this aint for me
+    - na, this is not for me
+    - I'm not interested
+    - I've lost interest in this
+    - This doesn't pique my curiosity
+    - I'm not intrigued by this
+- intent: request_game
+  examples: |
+    - let's play a game
+    - I want to play a game
+    - let's have some fun
+    - let's play [emotions](game_name)
+    - start a game of [emotions](game_name)
+    - I'm ready to play
+    - I want to have fun
+    - let's play [emotions](game_name) together
+    - lets play something
+    - I want to play a game of [emotions](game_name)
+    - I'm bored, can we play a game
+    - Its so boring, can we play a game of [emotions](game_name)
+    - Can we find something more fun, like a game
+    - Can we try a different activity, like a game of [emotions](game_name)
+    - robot, can we play a game
+    - I'm feeling bored, can we play a game robot
+    - exciting, let's play a game
+    - robot, i wanna play a game
+    - I am sad, can we play a game
+    - I should play a game
+    - should we play a game of [emotions](game_name)
+    - i am afraid, can we play a game
+    - I am bored, how about a game of [emotions](game_name)
+    - I am happy, can we play a game
+    - I am excited, can we play a game
+    - I am angry, distract me with a game
+    - I would rather do something else, like a game
+    - yes, let's play a game of [emotions](game_name)
+    - yes, i want [emotions](game_name)
+    - what games do you have
+    - what all games can we play
+    - which which games can we play
+    - can you play [emotions](game_name) with me
+    - what all games can you play? can you play [emotions](game_name)
+    - what games can we play
+    - Can we play a game?
+    - Can we play [emotions](game_name)?
+    - How about a game of [emotions](game_name)?
+    - Let's try playing [emotions](game_name)
+    - i want to play a game
+- intent: request_story
+  examples: |
+    - i need a story
+    - story
+    - story please
+    - tell me a story about [a princess](story_topic)
+    - tell me something to pass the time
+    - narrate me something
+    - Can you tell me a story about [a genie](story_topic)
+    - Can you share a story with me
+    - I love stories, can you tell me one
+    - I'd love to hear a story, can you share one with me
+    - Can you give me a [good](story_topic) story
+    - Can you share an [interesting](story_topic) story with me
+    - I love a [good](story_topic) story, can you tell me one
+    - Can you give me a story that's [fun and exciting](story_topic)
+    - Can you share a story that's [relaxing and calming](story_topic)
+    - Can you tell me a story with a [happy ending](story_topic)
+    - tell a story
+    - It's so boring can you tell me a story
+    - not interested anymore I want to hear a story about a [princess](story_topic)
+    - tell me a tale
+    - Excuse me robot, can you tell me a story
+    - hello robot, tell me a tale
+    - I want to hear a story robot
+    - tell a tale about [a dragon](story_topic)
+    - can you tell a story
+    - hello can you tell me a story
+    - I would like a story
+    - I would like to hear a story
+    - I would like to hear a story about [a princess](story_topic)
+    - I would like a story with [a dragon](story_topic)
+    - story with [a dragon](story_topic) and [a princess](story_topic)
+    - story with [whatever topic](story_topic) and [a princess](story_topic) and [a king](story_topic)
+    - story with [user choice](story_topic) please
+    - I am bored. Tell me a tale.
+    - This is so boring, can you tell me a story
+    - Boring. I need a [story about a [Crocodile](story_topic)
+    - I am bored. I need a story about a [villain](story_topic)
+    - I feel bored. I need a tale about a [hero](story_topic)
+    - Let's do something else. A story would be nice
+    - this is not so fun anymore. I would rather hear a story about [a donkey and his master](story_topic)
+    - i am sad. can you tell me a story about [a sad donkey](story_topic)
+    - i am angry. can you tell me a story about [a pilgrim](story_topic)
+    - tell me a story about [a penguin](story_topic) to reduce my anger
+    - robot, try to distract me with a story about [a ninja](story_topic)
+    - I am happy, so I want a story about [a happy family](story_topic)
+    - i am sad, so I want a story
+    - I am angry, so I want a story
+    - I am happy, tell me a story
+    - no, but a story sounds good
+    - yes, a story would be nice
+    - a story would be good, on a [sad day](story_topic)
+    - a story would be nice, how about one on a [dinosaur](story_topic)
+    - this aint working for me. How about a story about [a dinosaur](story_topic)
+    - I have changed my mind. I want a story about [a dinosaur](story_topic)
+    - no, but I would like a story
+    - no, but I would like a story about [a bamboo](story_topic)
+    - yes, I want a one about [robots](story_topic)
+    - story about [earphones](story_topic)
+    - a story would be good. one about [a robot](story_topic)
+    - story I guess
+    - can you tell me a story about [dinosaurs](story_topic)
+    - tell me a story about [dragons](story_topic)
+- intent: thank_you
+  examples: |
+    - thanks
+    - thank you
+    - thx
+    - thank you very much
+    - thanks a lot
+    - thanks a bunch
+    - thanks a ton
+    - thanks a million
+    - thnx
+    - Thanks very much
+    - I really appreciate it
+    - You're the best
+    - You're a lifesaver
+    - You're a star
+    - You're fantastic
+    - You're amazing
+    - thanks for the [game](activity_type)
+    - thanks for the [story](activity_type)
+    - that was a great [game](activity_type) thank you
+    - i appreciate the [help](extra_info)
+    - thank you for the [motivation](extra_info)
+    - You're a great help
+    - I'm grateful for your assistance
+    - You've been so helpful, thank you
+- intent: custom
+  examples: |
+    - show_likes
+    - show_dislikes
+    - show_likes_dislikes
+- intent: system_msg
+  examples: |
+    - system: activity_finished
+    - system: current emotion displayed is [happy](displayed_emotion)
+    - system: current emotion displayed is [sad](displayed_emotion)
+    - system: current emotion displayed is [anger](displayed_emotion)
+    - system: current emotion displayed is [surprise](displayed_emotion)
+    - system: current emotion displayed is [fear](displayed_emotion)
+    - system: current emotion displayed is [disgust](displayed_emotion)
+    - system: child is 5 years old
+
+- intent: nlu_fallback
+  examples: |
+    - Is it the happy emotion
+    - are you showing the emotion sad
+    - is it the emotion anger
+    - is it happy
+    - you are angry
+    - you are sad
+    - you are happy
+    - you are surprised
+    - is it surprise
+    - you are disgusted

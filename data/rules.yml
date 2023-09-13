@@ -1,0 +1,74 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: action_update_conversation
+
+  - action: utter_goodbye
+  - action: action_update_conversation
+
+- rule: just greeting
+  steps:
+  - intent: greet
+  - action: action_update_conversation
+
+  - action: utter_greet
+  - action: action_update_conversation
+
+- rule: just thanks
+  steps:
+  - intent: thank_you
+  - action: action_update_conversation
+
+  - action: utter_youre_welcome
+  - action: action_update_conversation
+
+- rule: dealing with love
+  steps:
+  - intent: express_love
+  - action: action_update_conversation
+
+  - action: utter_I_am_happy
+  - action: action_update_conversation
+
+# - rule: handover to gpt-3 whenever custom message is encountered
+#   condition:
+#   - slot_was_set:
+#     - activity_running: false
+#   steps:
+#   - intent: nlu_fallback  
+#   - action: action_fallback_response
+
+- rule: dealing with system message
+  steps:
+  - intent: system_msg
+  - action: action_deal_with_system_msg
+
+# - rule: during activity
+#   condition:
+#   - slot_was_set:
+#     - activity_running: true
+#   steps:
+#   - or:
+#     - intent: affirm
+#     - intent: bored
+#     - intent: bot_challenge
+#     - intent: child_likes_intent
+#     - intent: child_dislikes_intent
+#     - intent: deny
+#     - intent: doubts
+#     - intent: end_of_activity
+#     - intent: mood_angry
+#     - intent: mood_anxious
+#     - intent: mood_fear
+#     - intent: mood_happy
+#     - intent: mood_sad
+#     - intent: mood_uninterested
+#     - intent: request_game
+#     - intent: request_story
+#     - intent: custom
+#     - intent: nlu_fallback
+#   - action: action_interaction_during_activity
